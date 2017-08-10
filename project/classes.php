@@ -41,9 +41,19 @@ class Goe {
 
 }
 
+class Row {
 
+	public $rowNumber;
+	public $rowID = '';
+	public $rowValue = 0.00;
+	public $rowTotal = 0.00;
 
+	public function __construct($nr) {
+		$this -> rowNumber = $nr;
 
+	}
+
+}
 
 
 
