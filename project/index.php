@@ -9,32 +9,24 @@
   <meta name="author" content="SitePoint">
 
   <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+  
+
+
   <?php
-echo "Hej";
-  	include "classes.php";
-  	include "elements.php";
-  	
-  	$all_elements = get_elements();
-	
-  	foreach ($all_elements as $key) {
-  		# code...
-  		echo $key -> name;
-  	}
 
-
-	$e1A = new Element('1A', 'Single Axel', 'Jump', '1.1');
-	echo $e1A -> name;
-
-
-
+  include "classes.php";
+  include "elements.php";
+  include "table_functions.php";
 
   ?>
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-</head>
 
-<body>
-  <script src="js/scripts.js"></script>
-</body>
-</html>
+  </head>
+
+  <body>
+    <?php include "table.php"; ?>
+
+  </body>
+  </html>
+
+
+
