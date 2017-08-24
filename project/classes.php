@@ -14,10 +14,15 @@ class Element {
 		$this -> id = $id; 
 		$this -> type = $type; 
 		$this -> baseValue = $baseValue; 
-
 	}
 
+	public function __get($property) {
+    if (property_exists($this, $property)) {
+      return $this->$baseValue;
+    }
+  }
 }
+
 
 
 class Goe {
@@ -47,11 +52,15 @@ class Row {
 	public $rowID = '';
 	public $rowValue = 0.00;
 	public $rowTotal = 0.00;
+	public $jump;
+	public $jump_combo;
+	public $jump_2combo;
+	public $spin;
 
 	public function __construct($nr) {
 		$this -> rowNumber = $nr;
-
 	}
+
 
 }
 
