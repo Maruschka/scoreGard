@@ -6,11 +6,15 @@
     $jump_combo_row = "jump_combo_" .  $row;
     $jump_combo2_row = "jump_combo2_" . $row;
     $spin_row = "spin_" . $row;
+    $combo_check_row = "combo_" . $row;
+    $combo2_check_row = "combo2_" . $row;
 
     $jump = (isset($_POST[$jump_row]) ? $_POST[$jump_row] : "");
     $jump_combo = (isset($_POST[$jump_combo_row]) ? $_POST[$jump_combo_row] : ""); 
     $jump_combo_2 = (isset($_POST[$jump_combo2_row]) ? $_POST[$jump_combo2_row] : "");
     $spin = (isset($_POST[$spin_row]) ? $_POST[$spin_row] : "");
+    $combo_check = (isset($_POST[$combo_check_row]) ? "checked" : "");
+    $combo2_check = (isset($_POST[$combo2_check_row]) ? "checked" : "");
 
   ?>
 
@@ -67,4 +71,8 @@
     <td> <?php echo $rowTotal = $baseValue; ?> </td>
   </tr>
 
+<?php
+  echo $combo_check_row;
+  echo $combo_check;
+?>
 
