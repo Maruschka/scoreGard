@@ -2,19 +2,27 @@
           
     $all_elements = get_elements();
     $all_spins = get_spins();
+    $all_spin_names = get_spin_names();
+
     $jump_row = "jump_" . $row;
     $jump_combo_row = "jump_combo_" .  $row;
     $jump_combo2_row = "jump_combo2_" . $row;
-    $spin_row = "spin_" . $row;
+
     $combo_check_row = "combo_" . $row;
     $combo2_check_row = "combo2_" . $row;
+
+    $spin_row = "spin_" . $row;
+    $spin_level_row = "spin_level_" . $row;
 
     $jump = (isset($_POST[$jump_row]) ? $_POST[$jump_row] : "");
     $jump_combo = (isset($_POST[$jump_combo_row]) ? $_POST[$jump_combo_row] : ""); 
     $jump_combo_2 = (isset($_POST[$jump_combo2_row]) ? $_POST[$jump_combo2_row] : "");
-    $spin = (isset($_POST[$spin_row]) ? $_POST[$spin_row] : "");
+
     $combo_check = (isset($_POST[$combo_check_row]) ? "checked" : "");
     $combo2_check = (isset($_POST[$combo2_check_row]) ? "checked" : "");
+
+    $spin = (isset($_POST[$spin_row]) ? $_POST[$spin_row] : "");
+    $spin_level = (isset($_POST[$spin_level_row]) ? $_POST[$spin_level_row] : "B");
 
   ?>
 
@@ -47,7 +55,8 @@
 
       else if ($spin != "")
       {
-        $rowID = $spin;
+        $full_spin = $spin . $spin_level;
+        $rowID = $full_spin;
       }
       else  
       {
@@ -63,7 +72,7 @@
 
     <?php 
     $baseValue = get_baseValue($all_elements, $jump) + get_baseValue($all_elements, $jump_combo)
-     + get_baseValue($all_elements, $jump_combo_2);
+     + get_baseValue($all_elements, $jump_combo_2) + get_baseValue($all_spins, $full_spin);
 
     ?>
     <td> <?php echo $baseValue; ?> </td>
@@ -72,7 +81,7 @@
   </tr>
 
 <?php
-  echo $combo_check_row;
-  echo $combo_check;
+  echo $spin_level
+
 ?>
 
