@@ -1,5 +1,5 @@
 <?php 
-
+          
           echo "<select name=" . $jump_row . " onchange='this.form.submit()' >"; 
 ?>  
             <option value=""></option>

@@ -19,12 +19,8 @@ function get_baseValue($element_Array, $element)
 }
 
 function emptyElement($element){
-	$element = '';
-}
-
-
-function test()
-{
- 	return "hej";
+	$_POST[$element] = '';
 
 }
+
+?>

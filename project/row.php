@@ -13,6 +13,7 @@
 
     $spin_row = "spin_" . $row;
     $spin_level_row = "spin_level_" . $row;
+    $goe_row = "goe_" . $row;
 
     $jump = (isset($_POST[$jump_row]) ? $_POST[$jump_row] : "");
     $jump_combo = (isset($_POST[$jump_combo_row]) ? $_POST[$jump_combo_row] : ""); 
@@ -23,6 +24,7 @@
 
     $spin = (isset($_POST[$spin_row]) ? $_POST[$spin_row] : "");
     $spin_level = (isset($_POST[$spin_level_row]) ? $_POST[$spin_level_row] : "B");
+    $goe = (isset($_POST[$goe_row]) ? $_POST[$goe_row] : '0');
 
   ?>
 
@@ -36,7 +38,7 @@
       <td>
           <?php include "spin.php"; ?>
       </td>
-      <td>
+      
         <?php 
       if ($jump != "") 
       {
@@ -65,10 +67,16 @@
 
       //TODO - create function to get row object for insertion
       $row_1->rowID =  $rowID; 
-
+?>
+      <td>
+<?php
       echo $row_1->rowID;
-      ?>  
+?>  
     </td>
+    <td>
+      <?php include "goe.php"; ?>
+
+    </td>  
 
     <?php 
     $baseValue = get_baseValue($all_elements, $jump) + get_baseValue($all_elements, $jump_combo)
